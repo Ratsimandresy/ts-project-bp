@@ -47,6 +47,7 @@ function ajoutResultatParRound(tableauDesResultats, resultRound) {
 }
 
 export function calculScoreTotal(coupsJoueur1, coupsJoueur2) {
+  if (coupsJoueur1.length != coupsJoueur2.length) throw new Error("Nombres coups différents");
   let tableauDesResultats = [0, 0];
   for (let round = 0; round < coupsJoueur1.length; round++) {
     let resultRound = calculScore(coupsJoueur1[round], coupsJoueur2[round]);
