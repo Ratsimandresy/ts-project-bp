@@ -24,6 +24,7 @@ export function pfc(m1,m2) {
 }
 
 export function definirGagnant(m1,m2) {
+  if (m1 == "F") return "J1";
   return "J2";
 }
 

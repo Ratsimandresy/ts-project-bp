@@ -25,4 +25,8 @@ describe("pierre, feuille, ciseaux", () => {
   it('récupérer le gagnant J2', function () {
     expect(definirGagnant("C","P")).toEqual("J2");
   });
+
+  it('récupérer le gagnant J1', function () {
+    expect(definirGagnant("F","P")).toEqual("J1");
+  });
 })
