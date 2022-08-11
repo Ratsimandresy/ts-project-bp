@@ -22,3 +22,8 @@ export function pfc(m1,m2) {
   if (comparerFeuilleCiseaux(m1, m2)) resultat = "C";
   return resultat;
 }
+
+export function definirGagnant(m1,m2) {
+  return "J2";
+}
+

@@ -22,4 +22,7 @@ describe("pierre, feuille, ciseaux", () => {
     expect(pfc("C","F")).toEqual("C");
   });
 
+  it('récupérer le gagnant J2', function () {
+    expect(definirGagnant("C","P")).toEqual("J2");
+  });
 })
