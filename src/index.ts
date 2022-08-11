@@ -27,12 +27,15 @@ export function calculScore(main1, main2) {
   if (definirGagnant(main1, main2) == "Joueur 1") {
     return [1, -1];
   }
-  return [-1, 1];
+  if(definirGagnant(main1, main2) == "Joueur 2") {
+    return [-1, 1];
+  }
+  return [0,0];
 }
 
 export function definirGagnant(main1, main2) {
   let resultatDuel = pfc(main1, main2);
   if (main1 == resultatDuel) return "Joueur 1";
   if (main2 == resultatDuel) return "Joueur 2";
-  return "Egalite"
+  return "Egalite";
 }

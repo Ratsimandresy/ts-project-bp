@@ -41,4 +41,8 @@ describe("pierre, feuille, ciseaux", () => {
   it('calculer score J1 ciseaux, J2 feuille', function () {
     expect(calculScore("Ciseaux","Feuille")).toEqual([1,-1]);
   });
+
+  it('calculer score égalité', function () {
+    expect(calculScore("Ciseaux","Ciseaux")).toEqual([0,0]);
+  });
 })
