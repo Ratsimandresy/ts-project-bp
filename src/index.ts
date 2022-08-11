@@ -1,37 +1,36 @@
-function resultatDuel(m1, m2, c1, c2) {
-  return (m1 == c1 && m2 == c2) || (m2 == c1 && m1 == c2);
+function resultatDuel(main1, main2, c1, c2) {
+  return (main1 == c1 && main2 == c2) || (main2 == c1 && main1 == c2);
 }
 
-function comparerFeuillePierre(m1, m2) {
-  return resultatDuel(m1, m2, "F", "P");
+function comparerFeuillePierre(main1, main2) {
+  return resultatDuel(main1, main2, "Feuille", "Pierre");
 }
 
-function comparerPierreCiseaux(m1, m2) {
-  return resultatDuel(m1, m2, "C", "P");
+function comparerPierreCiseaux(main1, main2) {
+  return resultatDuel(main1, main2, "Ciseaux", "Pierre");
 }
 
-function comparerFeuilleCiseaux(m1, m2) {
-  return resultatDuel(m1, m2, "F", "C");
+function comparerFeuilleCiseaux(main1, main2) {
+  return resultatDuel(main1, main2, "Feuille", "Ciseaux");
 }
 
-export function pfc(m1,m2) {
+export function pfc(main1, main2) {
   let resultat;
-  if (m1 === m2) resultat = "=";
-  if (comparerFeuillePierre(m1, m2)) resultat = "F";
-  if (comparerPierreCiseaux(m1, m2)) resultat = "P";
-  if (comparerFeuilleCiseaux(m1, m2)) resultat = "C";
+  if (main1 === main2) resultat = "Egalite";
+  if (comparerFeuillePierre(main1, main2)) resultat = "Feuille";
+  if (comparerPierreCiseaux(main1, main2)) resultat = "Pierre";
+  if (comparerFeuilleCiseaux(main1, main2)) resultat = "Ciseaux";
   return resultat;
 }
 
-export function calculScore(m1, m2) {
-  if (definirGagnant(m1, m2) == "J1"){
+export function calculScore(main1, main2) {
+  if (definirGagnant(main1, main2) == "Joueur 1"){
     return [1,-1];
   }
   return [-1, 1];
 }
 
-export function definirGagnant(m1,m2) {
-  if (m1 == "F") return "J1";
-  return "J2";
+export function definirGagnant(main1,main2) {
+  if (main1 == "Feuille") return "Joueur 1";
+  return "Joueur 2";
 }
-
