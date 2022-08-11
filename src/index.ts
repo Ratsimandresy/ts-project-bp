@@ -40,13 +40,17 @@ export function definirGagnant(main1, main2) {
   return "Egalite";
 }
 
+function ajoutResultatParRound(tableauDesResultats, resultRound) {
+  for (let i = 0; i < 2; i++) {
+    tableauDesResultats[i] += resultRound[i];
+  }
+}
+
 export function calculScoreTotal(coupsJoueur1, coupsJoueur2) {
   let tableauDesResultats = [0, 0];
   for (let round = 0; round < coupsJoueur1.length; round++) {
     let resultRound = calculScore(coupsJoueur1[round], coupsJoueur2[round]);
-    for (let i = 0; i < 2; i++) {
-      tableauDesResultats[i] += resultRound[i];
-    }
+    ajoutResultatParRound(tableauDesResultats, resultRound);
   }
   return tableauDesResultats;
 }
