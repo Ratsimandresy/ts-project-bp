@@ -1,4 +1,6 @@
-import {definirGagnant, pfc} from "../src";
+import {definirGagnant, pfc, calculScore} from "../src";
+
+
 
 describe("pierre, feuille, ciseaux", () => {
   it("feuille gagne sur pierre", () => {
@@ -28,5 +30,9 @@ describe("pierre, feuille, ciseaux", () => {
 
   it('récupérer le gagnant J1', function () {
     expect(definirGagnant("F","P")).toEqual("J1");
+  });
+
+  it('calculer score joueur 1', function () {
+    expect(calculScore("F","P")).toEqual([1,-1]);
   });
 })

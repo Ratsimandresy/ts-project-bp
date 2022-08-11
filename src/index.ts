@@ -23,6 +23,10 @@ export function pfc(m1,m2) {
   return resultat;
 }
 
+export function calculScore(m1, m2) {
+  return [1,-1];
+}
+
 export function definirGagnant(m1,m2) {
   if (m1 == "F") return "J1";
   return "J2";
