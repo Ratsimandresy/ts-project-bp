@@ -24,7 +24,10 @@ export function pfc(m1,m2) {
 }
 
 export function calculScore(m1, m2) {
-  return [1,-1];
+  if (definirGagnant(m1, m2) == "J1"){
+    return [1,-1];
+  }
+  return [-1, 1];
 }
 
 export function definirGagnant(m1,m2) {

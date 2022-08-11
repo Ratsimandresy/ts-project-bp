@@ -35,4 +35,8 @@ describe("pierre, feuille, ciseaux", () => {
   it('calculer score joueur 1', function () {
     expect(calculScore("F","P")).toEqual([1,-1]);
   });
+
+  it('calculer score joueur 2', function () {
+    expect(calculScore("C","P")).toEqual([-1,1]);
+  });
 })
