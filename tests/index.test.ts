@@ -30,11 +30,15 @@ describe("pierre, feuille, ciseaux", () => {
     expect(definirGagnant("Feuille","Pierre")).toEqual("Joueur 1");
   });
 
-  it('calculer score joueur 1', function () {
+  it('calculer score joueur 1 gagnant', function () {
     expect(calculScore("Feuille","Pierre")).toEqual([1,-1]);
   });
 
-  it('calculer score joueur 2', function () {
+  it('calculer score joueur 2 gagnant', function () {
     expect(calculScore("Ciseaux","Pierre")).toEqual([-1,1]);
+  });
+
+  it('calculer score J1 ciseaux, J2 feuille', function () {
+    expect(calculScore("Ciseaux","Feuille")).toEqual([1,-1]);
   });
 })
