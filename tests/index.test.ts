@@ -1,4 +1,4 @@
-import {definirGagnant, pfc, calculScore} from "../src";
+import {definirGagnant, pfc, calculScore, calculScoreTotal} from "../src";
 
 describe("pierre, feuille, ciseaux", () => {
   it("feuille gagne sur pierre", () => {
@@ -44,5 +44,14 @@ describe("pierre, feuille, ciseaux", () => {
 
   it('calculer score égalité', function () {
     expect(calculScore("Ciseaux","Ciseaux")).toEqual([0,0]);
+  });
+
+  it('calculer score 2 rounds joueur 1 gagnant', function () {
+    expect(calculScoreTotal(["Pierre","Ciseaux"], ["Ciseaux", "Feuille"])).toEqual([2,-2]);
+  });
+
+  it('calculer score 4 rounds  egalité  2 joueurs', function () {
+    expect(calculScoreTotal(["Pierre","Ciseaux", "Feuille", "Ciseaux"], ["Ciseaux", "Feuille", "Ciseaux","Pierre"]))
+      .toEqual([0,0]);
   });
 })
