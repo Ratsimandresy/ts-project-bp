@@ -5,12 +5,13 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "outDir": "./dist",
     "baseUrl": "./src",
     "typeRoots": ["./node_modules/@types"],
-    "types": ["node"],
+    "types": ["node", "jest"],
     "moduleResolution": "Node",
     "incremental": true,
     "declarationMap": true,
@@ -18,5 +19,5 @@
     "inlineSources": true
   },
   "include": ["**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts","**/*.test.*", "**/__mocks__/*", "**/__tests__/*"]
 }
