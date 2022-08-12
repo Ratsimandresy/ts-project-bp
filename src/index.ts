@@ -48,11 +48,11 @@ function ajoutResultatParRound(tableauDesResultats, resultRound) {
   return nouveauxResultats;
 }
 
-export function calculScoreTotal(coupsJoueur1, coupsJoueur2, coupsJoueur3 = []) {
-  if (coupsJoueur1.length != coupsJoueur2.length) throw new Error("Nombres coups différents");
-  let tableauDesResultats = [0, 0, 0];
-  for (let round = 0; round < coupsJoueur1.length; round++) {
-    let resultRound = calculScore(coupsJoueur1[round], coupsJoueur2[round]);
+export function calculScoreTotal(...coupsJoueurs) {
+  if (coupsJoueurs[0].length != coupsJoueurs[1].length) throw new Error("Nombres coups différents");
+  let tableauDesResultats = Array(coupsJoueurs.length).fill(0);
+  for (let round = 0; round < coupsJoueurs[0].length; round++) {
+    let resultRound = calculScore(coupsJoueurs[0][round], coupsJoueurs[1][round]);
     tableauDesResultats =
       ajoutResultatParRound(tableauDesResultats, resultRound);
   }
