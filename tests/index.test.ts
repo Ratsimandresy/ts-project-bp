@@ -36,4 +36,8 @@ describe("pierre, feuille, ciseaux", () => {
     expect(() => calculScoreTotal(["Pierre","Ciseaux", "Feuille", "Ciseaux"], ["Ciseaux", "Feuille", "Ciseaux"]))
       .toThrowError("Nombres coups différents")
   });
+
+  it.skip('calculer score 1 round, 3 joueurs, égalité ', function () {
+    expect(calculScoreTotal(["Pierre"],["Pierre"],["Pierre"])).toEqual([0,0,0])
+  });
 })
