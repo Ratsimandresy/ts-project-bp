@@ -41,11 +41,7 @@ function definirGagnant(main1, main2) {
 }
 
 function ajoutResultatParRound(tableauDesResultats, resultRound) {
-  let nouveauxResultats = [];
-  for (let i = 0; i < 2; i++) {
-    nouveauxResultats[i] = resultRound[i] + tableauDesResultats[i];
-  }
-  return nouveauxResultats;
+  return tableauDesResultats.map((scoreActuel, index) => scoreActuel + resultRound[index])
 }
 
 export function calculScoreTotal(...coupsJoueurs) {
