@@ -23,7 +23,7 @@ export function pfc(main1, main2) {
   return resultat;
 }
 
-export function calculScore(main1, main2) {
+function calculScore(main1, main2) {
   if (definirGagnant(main1, main2) == "Joueur 1") {
     return [1, -1];
   }
@@ -33,7 +33,7 @@ export function calculScore(main1, main2) {
   return [0, 0];
 }
 
-export function definirGagnant(main1, main2) {
+function definirGagnant(main1, main2) {
   let resultatDuel = pfc(main1, main2);
   if (main1 == resultatDuel) return "Joueur 1";
   if (main2 == resultatDuel) return "Joueur 2";
@@ -48,9 +48,9 @@ function ajoutResultatParRound(tableauDesResultats, resultRound) {
   return nouveauxResultats;
 }
 
-export function calculScoreTotal(coupsJoueur1, coupsJoueur2) {
+export function calculScoreTotal(coupsJoueur1, coupsJoueur2, coupsJoueur3 = []) {
   if (coupsJoueur1.length != coupsJoueur2.length) throw new Error("Nombres coups différents");
-  let tableauDesResultats = [0, 0];
+  let tableauDesResultats = [0, 0, 0];
   for (let round = 0; round < coupsJoueur1.length; round++) {
     let resultRound = calculScore(coupsJoueur1[round], coupsJoueur2[round]);
     tableauDesResultats =

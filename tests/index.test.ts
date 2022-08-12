@@ -1,4 +1,4 @@
-import {definirGagnant, pfc, calculScore, calculScoreTotal} from "../src";
+import { pfc, calculScoreTotal} from "../src";
 
 describe("pierre, feuille, ciseaux", () => {
   it("feuille gagne sur pierre", () => {
@@ -22,29 +22,7 @@ describe("pierre, feuille, ciseaux", () => {
     expect(pfc("Ciseaux","Feuille")).toEqual("Ciseaux");
   });
 
-  it('récupérer le gagnant Joueur 2', function () {
-    expect(definirGagnant("Ciseaux","Pierre")).toEqual("Joueur 2");
-  });
 
-  it('récupérer le gagnant Joueur 1', function () {
-    expect(definirGagnant("Feuille","Pierre")).toEqual("Joueur 1");
-  });
-
-  it('calculer score joueur 1 gagnant', function () {
-    expect(calculScore("Feuille","Pierre")).toEqual([1,-1]);
-  });
-
-  it('calculer score joueur 2 gagnant', function () {
-    expect(calculScore("Ciseaux","Pierre")).toEqual([-1,1]);
-  });
-
-  it('calculer score J1 ciseaux, J2 feuille', function () {
-    expect(calculScore("Ciseaux","Feuille")).toEqual([1,-1]);
-  });
-
-  it('calculer score égalité', function () {
-    expect(calculScore("Ciseaux","Ciseaux")).toEqual([0,0]);
-  });
   it('calculer score 2 rounds joueur 1 gagnant', function () {
     expect(calculScoreTotal(["Pierre","Ciseaux"], ["Ciseaux", "Feuille"])).toEqual([2,-2]);
   });
