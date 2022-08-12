@@ -41,9 +41,11 @@ export function definirGagnant(main1, main2) {
 }
 
 function ajoutResultatParRound(tableauDesResultats, resultRound) {
+  let nouveauxResultats = [];
   for (let i = 0; i < 2; i++) {
-    tableauDesResultats[i] += resultRound[i];
+    nouveauxResultats[i] = resultRound[i] + tableauDesResultats[i];
   }
+  return nouveauxResultats;
 }
 
 export function calculScoreTotal(coupsJoueur1, coupsJoueur2) {
@@ -51,7 +53,8 @@ export function calculScoreTotal(coupsJoueur1, coupsJoueur2) {
   let tableauDesResultats = [0, 0];
   for (let round = 0; round < coupsJoueur1.length; round++) {
     let resultRound = calculScore(coupsJoueur1[round], coupsJoueur2[round]);
-    ajoutResultatParRound(tableauDesResultats, resultRound);
+    tableauDesResultats =
+      ajoutResultatParRound(tableauDesResultats, resultRound);
   }
   return tableauDesResultats;
 }
